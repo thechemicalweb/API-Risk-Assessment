@@ -49,7 +49,7 @@
 			try {
 				$statement = $this->db->prepare($statement);
 				$statement->execute(array($cas));
-				$result = $statement->fetchAll(\PDO::FETCH_NUM);
+				$result = $statement->fetchAll(\PDO::FETCH_ASSOC);
 				return $result;
 			} catch (\PDOException $e) {
 				exit($e->getMessage());
